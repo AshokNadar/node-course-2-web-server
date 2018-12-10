@@ -44,12 +44,18 @@ app.get('/about',(req,res) => {
    })
 });
 
+app.get('/projects',(req,res) => {
+ res.render('project.hbs',{
+     myTitle:"projects page"
+ });
+});
+
 app.get('/bad',(req,res) => {
     res.send({
         error:'error'
     });
 });
 app.listen(port,()=>{
-    console.log(`ap is up and running on ${port}`);
+    console.log(`app is up and running on ${port}`);
     
 });
