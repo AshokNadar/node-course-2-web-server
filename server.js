@@ -2,7 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 var app = express();
-
+const port = process.env.PORT || 3000;
 hbs.registerPartials(__dirname +'/views/partials');
 hbs.registerHelper('getCurrentYear',()=>{
     return new Date().getFullYear()
@@ -49,4 +49,7 @@ app.get('/bad',(req,res) => {
         error:'error'
     });
 });
-app.listen(3000);
+app.listen(port,()=>{
+    console.log(`ap is up and running on ${port}`);
+    
+});
